@@ -59,16 +59,31 @@
             </select>
         </div>
         <div>
-            <label for="entidad">Entidad</label>
-            <input type="text" id="entidad" name="entidad" class="default" />
+            <label for="tipoEmpresa">Tipo de Empresa:</label>
+            <select id="tipoEmpresa" name="tipoEmpresa" class="default">
+                <option value="">Seleccione</option>
+                <option value="arl">Arl</option>
+                <option value="caja">Caja</option>
+                <option value="pension">Pension</option>
+                <option value="eps">Eps</option>
+                <option value="cesantias">Cesantias</option>
+            </select>
         </div>
         <div>
-            <label for="dir">Dirección</label>
-            <input type="text" id="dir" name="dir" class="default" />
+            <label for="dir">Dirección Principal</label>
+            <input type="text" id="dirprincipal" name="dirprincipal" class="default" />
         </div>
         <div>
-            <label for="correo">Email</label>
-            <input type="text" id="correo" name="correo" class="default" />
+            <label for="contactoname">Nombre de Contacto</label>
+            <input type="text" id="contactoname" name="contactoname" class="default" />
+        </div>
+        <div>
+            <label for="telefono">Telefono:</label>
+            <input type="tel" id="telefono" name="telefono" class="default">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" class="default">
         </div>
         <div>
             <button type="submit">Submit</button>
