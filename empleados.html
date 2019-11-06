@@ -19,41 +19,52 @@
             <input type="radio" id="tipo" name="juridico">Jurídico
         </div>
         <div>
+            <label for="tipodocumento_empleador">Tipo de Documento:</label>
+            <select id="tipodocumento_empleador" name="tipodocumento_empleador" class="default">
+                <option value="">Seleccionar</option>
+                <option value="cedula">Cedula</option>
+                <option value="ti">Tarjeta de Identidad</option>
+                <option value="pasaporte">Pasaporte</option>
+                <option value="otros">Otros</option>
+            </select>
+        </div>
+        <div>
+            <label for="numero_documento">Numero Documento:</label>
+            <input type="text" id="numero_documento" name="numero_documento" class="default">
+        </div>
+        <div>
+            <label for="nombre_empresa">Nombre de la empresa:</label>
+            <input type="text" id="nombre_empresa" name="nombre_empresa" class="default">
+        </div>
+        <div>
+            <label for="digito_verificacion">Digito de Verificacion</label>
+            <input type="text" id="digito_verificacion" name="digito_verificacion" class="default">
+        </div>
+        <div>
+            <label for="dep_empleador">Departamento:</label>
+            <select id="dep_empleador" name="dep_empleador" class="default">
+                <option value="">Seleccionar</option>
+                <option value="antioquia">Antioquia</option>
+                <option value="cundinamarca">Cundinamarca</option>
+                <option value="caldas">Caldas</option>
+            </select>
+        </div>
+        <div>
+            <label for="mun_empleador">Municipio:</label>
+            <select id="mun_empleador" name="mun_empleador" class="default">
+                <option value="">Seleccionar</option>
+                <option value="medellin">Medellín</option>
+                <option value="bogota">Bogotá</option>
+                <option value="manizales">Manizales</option>
+            </select>
+        </div>
+        <div>
             <label for="entidad">Entidad</label>
             <input type="text" id="entidad" name="entidad" class="default" />
         </div>
         <div>
             <label for="dir">Dirección</label>
             <input type="text" id="dir" name="dir" class="default" />
-        </div>
-        <div>
-            <label for="cargo">Cargo</label>
-            <input type="text" id="cargo" name="cargo" class="default" />
-        </div>
-        <div>
-            <label for="fechaVin">Fecha Vinculación</label>
-            <input type="date" id="fechaVin" name="fechaVin" class="default" />
-        </div>
-        <div>
-            <label for="tipoCont">Tipo de Contrato</label>
-            <select id="tipoCont">
-                <option value="Temporal">Temporal</option>
-                <option value="Servicios">Por servicios</option>
-                <option value="Indefinido">Indefinido</option>
-                <option value="Aterminofijo">A término fijo</option>
-                <option value="ObraLabor">Por obra y labor</option>
-            </select>
-        </div>
-        <div>
-            <label for="turno">Turno</label>
-            <select id="turno">
-                <option value="diurno">Diurno</option>
-                <option value="nocturno">Nocturno</option>
-            </select>
-        </div>
-        <div>
-            <label for="salario">Salario</label>
-            <input type="number" id="salario" name="salario" class="default" />
         </div>
         <div>
             <label for="correo">Email</label>
