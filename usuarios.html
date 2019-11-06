@@ -131,6 +131,29 @@
                 <option>Porvenir</option>
             </select>
         </div>
+        <div>
+            <label for="entidad-empleadora">Entidad empleadora</label>
+            <input type="text" id="entidad-empleadora" name="entidad-empleadora" class="default"> 
+        </div>
+        <div>
+            <label for="cargo">Cargo</label>
+            <input type="text" id="cargo" name="cargo" class="default"> 
+        </div>
+        <di>
+            <label for="fecVinculacion">Fecha de Vinculación:</label>
+            <input type="date" id="fecVinculacion" name="fecVinculacion" min="1945-01-01" max="2070-01-01"
+                    class="default">
+        </di>
+        <div>
+            <label for="tipoCont">Tipo de Contrato</label>
+            <select id="tipoCont">
+                <option value="Temporal">Temporal</option>
+                <option value="Servicios">Por servicios</option>
+                <option value="Indefinido">Indefinido</option>
+                <option value="Aterminofijo">A término fijo</option>
+                <option value="ObraLabor">Por obra y labor</option>
+            </select>
+        </div>
         <div class="button">
             <button type="submit">Enviar</button>
             <button type="reset">Limpiar</button>
