@@ -17,7 +17,9 @@ export class FormUsuariosComponent {
       'correo': new FormControl('', [ Validators.required, 
                                       Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]),
       'numeroDocumento': new FormControl('',[Validators.required, Validators.min(1000000), Validators.max(10000000000)]),
-      'telefono': new FormControl('',[Validators.required, Validators.min(1000000), Validators.max(9999999)])
+      'telefono': new FormControl('',[Validators.required, Validators.min(1000000), Validators.max(9999999)]),
+      'direccionResidencia': new FormControl('', [Validators.required, Validators.minLength(10)]),
+      'entidadEmpleadora': new FormControl('', [Validators.required, Validators.minLength(3)])
     })
   }
 
