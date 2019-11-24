@@ -35,8 +35,15 @@
         <div class="col">
           <!-- Apellido -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="email" id="materialRegisterFormLastName" class="form-control"formControlName="apellido" mdbInput>
             <label for="materialRegisterFormLastName">Apellidos</label>
+            <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
+                el apellido es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                por lo menos 3 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
