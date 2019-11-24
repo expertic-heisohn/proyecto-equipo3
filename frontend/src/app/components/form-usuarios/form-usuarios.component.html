@@ -46,20 +46,22 @@
         <div class="col">
           <!--Género-->
           <p>Género</p>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Masculino
-            </label>
+          <!-- Default inline 1-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineMasculino"
+              name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineMasculino">Masculino</label>
           </div>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Femenino
-            </label>
+          <!-- Default inline 2-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineFemenino"
+              name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineFemenino">Femenino</label>
           </div>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Otros
-            </label>
+          <!-- Default inline 3-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineOtros" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineOtros">Otro</label>
           </div>
         </div>
       </div>
@@ -67,7 +69,7 @@
         <div class="col">
           <!-- Tipo de documento -->
           <div class="md-form">
-            <select class="browser-default custom-select" class="form-control" mdbInput>
+            <select id="tipodocumento" name="tipodocumento" class="browser-default custom-select" class="form-control" mdbInput>
               <option selected>Tipo de Documento</option>
               <option value="1">Cedula</option>
               <option value="2">T.I</option>
@@ -96,20 +98,22 @@
         <div class="col">
           <!--Estado Civil-->
           <p>Estado Civil</p>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Soltero
-            </label>
+          <!-- Default inline 1-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil1" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil1">Soltero</label>
           </div>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Casado
-            </label>
+
+          <!-- Default inline 2-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil2" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil2">Casado</label>
           </div>
-          <div class="form-check-inline">
-            <label class="form-check-label">
-              <input type="radio" class="form-check-input" name="optradio">Union Libre
-            </label>
+
+          <!-- Default inline 3-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil3" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil3">Unión Libre</label>
           </div>
         </div>
       </div>
@@ -117,8 +121,8 @@
         <div class="col">
           <!-- Fecha de Nacimiento -->
           <div class="md-form">
-            <input type="date" id="materialRegisterFormFirstName" class="form-control" mdbInput>
-            <label for="materialRegisterFormFirstName">Fecha de Nacimiento</label>
+            <input type="date" id="fechaDeNacimiento" name="fechaDeNacimiento" class="form-control" mdbInput>
+            <label for="fechaDeNacimiento">Fecha de Nacimiento</label>
           </div>
         </div>
         <div class="col">
@@ -142,8 +146,8 @@
         <div class="col">
           <!--Celular-->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormGenero">Celular</label>
+            <input type="text" id="celular" name="celular"class="form-control" mdbInput>
+            <label for="celular">Celular</label>
           </div>
         </div>
       </div>
@@ -165,7 +169,7 @@
         <div class="col">
           <div class="md-form">
             <!-- Departamento -->
-            <select class="browser-default custom-select">
+            <select  id="departamento" name="departamento" class="browser-default custom-select">
               <option selected>Departamento</option>
               <option value="1">Antioquia</option>
               <option value="2">Cundinamarca</option>
@@ -176,7 +180,7 @@
         <div class="col">
           <!--Municipio-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="municipio" name="municipio" class="browser-default custom-select">
               <option selected>Municipio</option>
               <option value="1">Medellin</option>
               <option value="2">Bogota</option>
@@ -203,7 +207,7 @@
         <div class="col">
           <!-- Arl -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="arl" name="arl" class="browser-default custom-select">
               <option selected>Arl</option>
               <option value="1">Sura</option>
               <option value="2">Positiva</option>
@@ -214,7 +218,7 @@
         <div class="col">
           <!--Eps-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="eps" name="eps" class="browser-default custom-select">
               <option selected>Eps</option>
               <option value="1">Nueva Eps</option>
               <option value="2">Sura</option>
@@ -227,7 +231,7 @@
         <div class="col">
           <!-- Caja de Compensación -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="cajaCompensacion" name="cajaCompensacion"class="browser-default custom-select">
               <option selected>Caja de Compensación</option>
               <option value="1">Comfama</option>
               <option value="2">Confenalca</option>
@@ -238,7 +242,7 @@
         <div class="col">
           <!-- Pensiones -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="pensiones" name="pensiones" class="browser-default custom-select">
               <option selected>Pensiones</option>
               <option value="1">Colpensiones</option>
               <option value="2">Protección</option>
@@ -249,7 +253,7 @@
         <div class="col">
           <!--Censantías-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="cesantias" name="cesantias" class="browser-default custom-select">
               <option selected>Cesantías</option>
               <option value="1">Protección</option>
               <option value="2">Porvenir</option>
@@ -276,21 +280,21 @@
         <div class="col">
           <!-- Cargo -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
-            <label for="materialRegisterFormLastName">Cargo</label>
+            <input type="text" id="cargo" name="cargo" class="form-control" mdbInput>
+            <label for="cargo">Cargo</label>
           </div>
         </div>
         <div class="col">
           <!--Fecha de Vinculación-->
           <div class="md-form">
-            <input type="date" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormGenero">Fecha de Vinculación</label>
+            <input type="date" id="fechaDeVinculacion" name="fechaDeVinculacion" class="form-control" mdbInput>
+            <label for="fechaDeVinculacion">Fecha de Vinculación</label>
           </div>
         </div>
       </div>
       <!--Tipo de Contrato-->
       <div class="md-form">
-        <select class="browser-default custom-select">
+        <select id="tipoContrato" name="tipoContrato" class="browser-default custom-select">
           <option selected>Tipo de Contrato</option>
           <option value="1">Temporal</option>
           <option value="2">Prestación de Servicios</option>
