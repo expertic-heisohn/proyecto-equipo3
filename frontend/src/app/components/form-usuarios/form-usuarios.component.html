@@ -19,14 +19,12 @@
         <div class="col">
           <!-- Nombre -->
           <div class="md-form">
-              
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="nombre" mdbInput>
             <label for="materialRegisterFormFirstName">Nombre</label>
             {{formaUsuario.errors}}
             <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback" style="color: red;">
                 el nombre es necesario
             </div>
-            
             <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
                 por lo menos 3 caracteres
             </div>
@@ -40,7 +38,6 @@
             <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
                 el apellido es necesario
             </div>
-        
             <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
                 por lo menos 3 caracteres
             </div>
@@ -48,10 +45,21 @@
         </div>
         <div class="col">
           <!--Género-->
-          <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control"mdbInput>
-            <label for="materialRegisterFormGenero">Género</label>
-
+          <p>Género</p>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Masculino
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Femenino
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Otros
+            </label>
           </div>
         </div>
       </div>
@@ -75,7 +83,7 @@
             <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
                 el # documento es necesario
             </div>
-        
+
             <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
                 minimo 7 numeros
             </div>
@@ -87,9 +95,21 @@
         </div>
         <div class="col">
           <!--Estado Civil-->
-          <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormLastName">Estado Civil</label>
+          <p>Estado Civil</p>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Soltero
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Casado
+            </label>
+          </div>
+          <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="optradio">Union Libre
+            </label>
           </div>
         </div>
       </div>
@@ -110,7 +130,7 @@
             <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
                 el telefono fijo es necesario
             </div>
-        
+
             <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
                 minimo 7 numeros
             </div>
@@ -136,7 +156,7 @@
             <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
                 el correo es necesario
             </div>
-        
+
             <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
                 ej: example@correo.com
             </div>
@@ -174,7 +194,7 @@
             <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
                 la direccion es necesaria
             </div>
-        
+
             <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
                 minimo 10 caracteres
             </div>
@@ -247,7 +267,7 @@
             <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.required" class="form-control-feedback " style="color: red;">
                 nombre de la empresa es necesaria
             </div>
-        
+
             <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.minlength" class="form-control-feedback " style="color: red;">
                 minimo 3 caracteres
             </div>
@@ -270,14 +290,14 @@
       </div>
       <!--Tipo de Contrato-->
       <div class="md-form">
-          <select class="browser-default custom-select">
-              <option selected>Tipo de Contrato</option>
-              <option value="1">Temporal</option>
-              <option value="2">Prestación de Servicios</option>
-              <option value="3">Indefinido</option>
-              <option value="4">Fijo</option>
-              <option value="3">Otro</option>
-            </select>
+        <select class="browser-default custom-select">
+          <option selected>Tipo de Contrato</option>
+          <option value="1">Temporal</option>
+          <option value="2">Prestación de Servicios</option>
+          <option value="3">Indefinido</option>
+          <option value="4">Fijo</option>
+          <option value="3">Otro</option>
+        </select>
       </div>
       <!-- button Enviar-->
       <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
