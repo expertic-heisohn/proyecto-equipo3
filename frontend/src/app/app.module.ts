@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MDBBootstrapModule, NavbarModule } from 'angular-bootstrap-md';
 import { FormUsuariosComponent } from './components/form-usuarios/form-usuarios.component';
 import { AppComponent } from './app.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
   declarations: [
     AppComponent,
     FormUsuariosComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule,
     MDBBootstrapModule.forRoot(),
