@@ -131,9 +131,15 @@
         <div class="col">
           <!-- E-mail -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormFirstName" class="form-control"  mdbInput>
+            <input type="email" id="materialRegisterFormFirstName" class="form-control"formControlName="correo"  mdbInput>
             <label for="materialRegisterFormFirstName">E-mail</label>
-
+            <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
+                el correo es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
+                ej: example@correo.com
+            </div>
           </div>
         </div>
         <div class="col">
