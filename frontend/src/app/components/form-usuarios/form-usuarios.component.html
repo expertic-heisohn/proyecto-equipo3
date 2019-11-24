@@ -35,7 +35,7 @@
         <div class="col">
           <!-- Apellido -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control"formControlName="apellido" mdbInput>
+            <input type="text" id="materialRegisterFormLastName" class="form-control"formControlName="apellido" mdbInput>
             <label for="materialRegisterFormLastName">Apellidos</label>
             <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
                 el apellido es necesario
@@ -49,15 +49,9 @@
         <div class="col">
           <!--Género-->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control"formControlName="correo" mdbInput>
+            <input type="text" id="materialRegisterFormGenero" class="form-control"mdbInput>
             <label for="materialRegisterFormGenero">Género</label>
-            <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
-                el correo es necesario
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
-                ej: example@correo.com
-            </div>
+
           </div>
         </div>
       </div>
@@ -110,8 +104,19 @@
         <div class="col">
           <!-- Teléfono -->
           <div class="md-form">
-            <input type="tel" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName='telefono' mdbInput>
             <label for="materialRegisterFormLastName">Teléfono</label>
+
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
+                el telefono fijo es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
+                minimo 7 numeros
+            </div>
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.max" class="form-control-feedback " style="color: red;">
+                maximo 7 numeros
+            </div>
           </div>
         </div>
         <div class="col">
@@ -126,8 +131,9 @@
         <div class="col">
           <!-- E-mail -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <input type="email" id="materialRegisterFormFirstName" class="form-control"  mdbInput>
             <label for="materialRegisterFormFirstName">E-mail</label>
+
           </div>
         </div>
         <div class="col">
