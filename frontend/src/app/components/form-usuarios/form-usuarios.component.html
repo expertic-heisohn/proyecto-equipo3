@@ -13,28 +13,45 @@
   <mdb-card-body class="px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form [formGroup]="formaUsuario"(ngSubmit)="guardarCambios()" class="text-center" style="color: #757575;">
 
       <div class="form-row">
         <div class="col">
           <!-- Nombre -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+              
+            <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="nombre" mdbInput>
             <label for="materialRegisterFormFirstName">Nombre</label>
+            {{formaUsuario.errors}}
+            <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback" style="color: red;">
+                el nombre es necesario
+            </div>
+            
+            <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
+                por lo menos 3 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
           <!-- Apellido -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="text" id="materialRegisterFormLastName" class="form-control"formControlName="apellido" mdbInput>
             <label for="materialRegisterFormLastName">Apellidos</label>
+            <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
+                el apellido es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                por lo menos 3 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
           <!--Género-->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control" mdbInput>
+            <input type="text" id="materialRegisterFormGenero" class="form-control"mdbInput>
             <label for="materialRegisterFormGenero">Género</label>
+
           </div>
         </div>
       </div>
@@ -53,8 +70,19 @@
         <div class="col">
           <!-- Numero del Documento-->
           <div class="md-form">
-            <input type="number" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName="numeroDocumento" mdbInput>
             <label for="materialRegisterFormLastName">Número del Documento</label>
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
+                el # documento es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
+                minimo 7 numeros
+            </div>
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.max" class="form-control-feedback " style="color: red;">
+                maximo 10 numeros
+            </div>
+
           </div>
         </div>
         <div class="col">
@@ -76,8 +104,19 @@
         <div class="col">
           <!-- Teléfono -->
           <div class="md-form">
-            <input type="tel" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName='telefono' mdbInput>
             <label for="materialRegisterFormLastName">Teléfono</label>
+
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
+                el telefono fijo es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
+                minimo 7 numeros
+            </div>
+            <div *ngIf="formaUsuario.controls['telefono'].errors?.max" class="form-control-feedback " style="color: red;">
+                maximo 7 numeros
+            </div>
           </div>
         </div>
         <div class="col">
@@ -92,8 +131,15 @@
         <div class="col">
           <!-- E-mail -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <input type="email" id="materialRegisterFormFirstName" class="form-control"formControlName="correo"  mdbInput>
             <label for="materialRegisterFormFirstName">E-mail</label>
+            <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
+                el correo es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
+                ej: example@correo.com
+            </div>
           </div>
         </div>
         <div class="col">
@@ -123,8 +169,15 @@
         <div class="col">
           <!-- Direccion de residencia -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="direccionResidencia" mdbInput>
             <label for="materialRegisterFormFirstName">Dirección de Residencia</label>
+            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
+                la direccion es necesaria
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                minimo 10 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
@@ -189,8 +242,15 @@
         <div class="col">
           <!-- Entidad Empleadora -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="entidadEmpleadora" mdbInput>
             <label for="materialRegisterFormFirstName">Entidad Empleadora</label>
+            <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.required" class="form-control-feedback " style="color: red;">
+                nombre de la empresa es necesaria
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                minimo 3 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
@@ -222,29 +282,10 @@
       <!-- button Enviar-->
       <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
         mdbWavesEffect type="submit">Enviar</button>
+        {{formaUsuario.valid}}
 
-      <!-- Social register -->
-      <p>or sign up with:</p>
 
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="facebook"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="twitter"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="linkedin"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="heart"></mdb-icon>
-      </a>
 
-      <hr>
-
-      <!-- Terms of service -->
-      <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>. </p>
 
     </form>
     <!-- Form -->
