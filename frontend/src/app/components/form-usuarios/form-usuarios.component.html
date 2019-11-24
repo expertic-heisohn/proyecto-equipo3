@@ -13,14 +13,23 @@
   <mdb-card-body class="px-lg-5 pt-0">
 
     <!-- Form -->
-    <form class="text-center" style="color: #757575;">
+    <form [formGroup]="formaUsuario"(ngSubmit)="guardarCambios()" class="text-center" style="color: #757575;">
 
       <div class="form-row">
         <div class="col">
           <!-- Nombre -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+              
+            <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="nombre" mdbInput>
             <label for="materialRegisterFormFirstName">Nombre</label>
+
+            <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback" style="color: red;">
+                el nombre es necesario
+            </div>
+            
+            <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
+                por lo menos 3 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
@@ -222,29 +231,10 @@
       <!-- button Enviar-->
       <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
         mdbWavesEffect type="submit">Enviar</button>
+        {{formaUsuario.valid}}
 
-      <!-- Social register -->
-      <p>or sign up with:</p>
 
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="facebook"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="twitter"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="linkedin"></mdb-icon>
-      </a>
-      <a type="button" class="light-blue-text mx-2">
-        <mdb-icon fab icon="heart"></mdb-icon>
-      </a>
 
-      <hr>
-
-      <!-- Terms of service -->
-      <p>By clicking
-        <em>Sign up</em> you agree to our
-        <a href="" target="_blank">terms of service</a>. </p>
 
     </form>
     <!-- Form -->
