@@ -1,18 +1,20 @@
-
 <mdb-navbar
   SideClass="navbar navbar-expand-lg navbar-dark default-color ie-nav"
   [containerInside]="false"
 >
   <mdb-navbar-brand>
-    <a class="logo navbar-brand" href="#"><strong>Navbar</strong></a>
+    <a class="logo navbar-brand" href="#"><strong>HEINSOHN</strong></a>
   </mdb-navbar-brand>
   <links>
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active waves-light" mdbWavesEffect>
-        <a class="nav-link">Home<span class="sr-only">(current)</span></a>
+      <!--li class="nav-item active waves-light" mdbWavesEffect>
+        <a class="nav-link">Home <span class="sr-only">(current)</span></a>
+      </li-->
+      <li class="nav-item waves-light"routerLinkActive = "active" mdbWavesEffect>
+        <a class="nav-link" [routerLink]="['usuario']">Usuario</a>
       </li>
       <li class="nav-item waves-light" mdbWavesEffect>
-        <a class="nav-link">Features</a>
+        <a class="nav-link" >Empresa</a>
       </li>
 
     </ul>
