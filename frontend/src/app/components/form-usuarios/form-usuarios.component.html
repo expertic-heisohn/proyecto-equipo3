@@ -169,9 +169,15 @@
         <div class="col">
           <!-- Direccion de residencia -->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormFirstName" class="form-control" mdbInput>
+            <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="direccionResidencia" mdbInput>
             <label for="materialRegisterFormFirstName">Dirección de Residencia</label>
-
+            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
+                la direccion es necesaria
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                minimo 10 caracteres
+            </div>
           </div>
         </div>
         <div class="col">
