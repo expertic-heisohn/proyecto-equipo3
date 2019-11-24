@@ -22,7 +22,7 @@
               
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="nombre" mdbInput>
             <label for="materialRegisterFormFirstName">Nombre</label>
-
+            {{formaUsuario.errors}}
             <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback" style="color: red;">
                 el nombre es necesario
             </div>
@@ -76,8 +76,19 @@
         <div class="col">
           <!-- Numero del Documento-->
           <div class="md-form">
-            <input type="number" id="materialRegisterFormLastName" class="form-control" mdbInput>
+            <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName="numeroDocumento" mdbInput>
             <label for="materialRegisterFormLastName">Número del Documento</label>
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
+                el # documento es necesario
+            </div>
+        
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
+                minimo 7 numeros
+            </div>
+            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.max" class="form-control-feedback " style="color: red;">
+                maximo 10 numeros
+            </div>
+
           </div>
         </div>
         <div class="col">
