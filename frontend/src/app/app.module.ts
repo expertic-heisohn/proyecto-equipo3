@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AppRoutingModule } from './components/app-routing.module';
 //rutas
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormEmpleadorComponent } from './components/form-empleador/form-empleador.component';
 
 
 
@@ -16,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     FormUsuariosComponent,
     NavbarComponent,
+    FormEmpleadorComponent,
   ],
   imports: [BrowserModule,
     MDBBootstrapModule.forRoot(),
