@@ -23,7 +23,7 @@
                         <input type="text" id="materialRegisterFormFirstName" class="form-control"
                             formControlName="nombre_empresa" mdbInput>
                         <label for="materialRegisterFormFirstName">Nombre de la empresa</label>
-                        {{formaEmpleador.errors}}
+                        
                         <div *ngIf="formaEmpleador.controls['nombre_empresa'].errors?.required"
                             class="form-control-feedback" style="color: red;">
                             el nombre es necesario

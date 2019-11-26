@@ -16,50 +16,64 @@
     <form [formGroup]="formaUsuario"(ngSubmit)="guardarCambios()" class="text-center" style="color: #757575;">
 
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Nombre -->
           <div class="md-form">
-              
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="nombre" mdbInput>
-            <label for="materialRegisterFormFirstName">Nombre</label>
-            {{formaUsuario.errors}}
-            <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback" style="color: red;">
-                el nombre es necesario
-            </div>
+            <label for="materialRegisterFormFirstName" >
+              <div *ngIf="formaUsuario.controls['nombre'].errors?.required" class="form-control-feedback"  style="color: red;">
+                  Nombre es necesario *
+              </div>
+              <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
+                  por lo menos 3 caracteres en el nombre
+              </div>
+            </label>
             
-            <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
-                por lo menos 3 caracteres
-            </div>
+
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Apellido -->
           <div class="md-form">
             <input type="text" id="materialRegisterFormLastName" class="form-control"formControlName="apellido" mdbInput>
-            <label for="materialRegisterFormLastName">Apellidos</label>
-            <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
-                el apellido es necesario
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                por lo menos 3 caracteres
-            </div>
+            <label for="materialRegisterFormLastName" placeholder = "Apellidos">
+                <div *ngIf="formaUsuario.controls['apellido'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Apellido es necesario *
+                </div>
+                <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                    por lo menos 3 caracteres en apellido
+                </div>
+            </label>
           </div>
         </div>
-        <div class="col">
-          <!--Género-->
-          <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control"mdbInput>
-            <label for="materialRegisterFormGenero">Género</label>
 
+        <div class="col-md-4">
+          <!--Género-->
+          <p>Género</p>
+          <!-- Default inline 1-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineMasculino"
+              name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineMasculino">Masculino</label>
+          </div>
+          <!-- Default inline 2-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineFemenino"
+              name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineFemenino">Femenino</label>
+          </div>
+          <!-- Default inline 3-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="defaultInlineOtros" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="defaultInlineOtros">Otro</label>
           </div>
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Tipo de documento -->
           <div class="md-form">
-            <select class="browser-default custom-select" class="form-control" mdbInput>
+            <select id="tipodocumento" name="tipodocumento" class="browser-default custom-select" class="form-control" mdbInput>
               <option selected>Tipo de Documento</option>
               <option value="1">Cedula</option>
               <option value="2">T.I</option>
@@ -67,85 +81,105 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Numero del Documento-->
           <div class="md-form">
             <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName="numeroDocumento" mdbInput>
-            <label for="materialRegisterFormLastName">Número del Documento</label>
-            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
-                el # documento es necesario
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
-                minimo 7 numeros
-            </div>
-            <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.max" class="form-control-feedback " style="color: red;">
-                maximo 10 numeros
-            </div>
+            <label for="materialRegisterFormLastName">
+                <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Numero de documento es necesario *
+                </div>
+    
+                <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
+                    minimo 7 numeros
+                </div>
+                <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.max" class="form-control-feedback " style="color: red;">
+                    maximo 10 numeros
+                </div>
+            </label>
+
 
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Estado Civil-->
-          <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormLastName">Estado Civil</label>
+          <p>Estado Civil</p>
+          <!-- Default inline 1-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil1" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil1">Soltero</label>
+          </div>
+
+          <!-- Default inline 2-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil2" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil2">Casado</label>
+          </div>
+
+          <!-- Default inline 3-->
+          <div class="custom-control custom-radio custom-control-inline">
+            <input type="radio" class="custom-control-input" id="estadoCivil3" name="inlineDefaultRadiosExample">
+            <label class="custom-control-label" for="estadoCivil3">Unión Libre</label>
           </div>
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Fecha de Nacimiento -->
           <div class="md-form">
-            <input type="date" id="materialRegisterFormFirstName" class="form-control" mdbInput>
-            <label for="materialRegisterFormFirstName">Fecha de Nacimiento</label>
+            <input type="date" id="fechaDeNacimiento" name="fechaDeNacimiento" class="form-control" mdbInput>
+            <label for="fechaDeNacimiento">Fecha de Nacimiento</label>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Teléfono -->
           <div class="md-form">
             <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName='telefono' mdbInput>
-            <label for="materialRegisterFormLastName">Teléfono</label>
+            <label for="materialRegisterFormLastName">
+                <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Telefono fijo es necesario *
+                </div>
+    
+                <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
+                    minimo 7 numeros
+                </div>
+                <div *ngIf="formaUsuario.controls['telefono'].errors?.max" class="form-control-feedback " style="color: red;">
+                    maximo 7 numeros
+                </div>
+            </label>
 
-            <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
-                el telefono fijo es necesario
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
-                minimo 7 numeros
-            </div>
-            <div *ngIf="formaUsuario.controls['telefono'].errors?.max" class="form-control-feedback " style="color: red;">
-                maximo 7 numeros
-            </div>
+
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Celular-->
           <div class="md-form">
-            <input type="text" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormGenero">Celular</label>
+            <input type="text" id="celular" name="celular"class="form-control" mdbInput>
+            <label for="celular">Celular</label>
           </div>
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- E-mail -->
           <div class="md-form">
             <input type="email" id="materialRegisterFormFirstName" class="form-control"formControlName="correo"  mdbInput>
-            <label for="materialRegisterFormFirstName">E-mail</label>
-            <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
-                el correo es necesario
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
-                ej: example@correo.com
-            </div>
+            <label for="materialRegisterFormFirstName">
+                <div *ngIf="formaUsuario.controls['correo'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Correo es necesario *
+                </div>
+    
+                <div *ngIf="formaUsuario.controls['correo'].errors?.pattern" class="form-control-feedback " style="color: red;">
+                    ej: example@correo.com
+                </div>
+            </label>
+
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <div class="md-form">
             <!-- Departamento -->
-            <select class="browser-default custom-select">
+            <select  id="departamento" name="departamento" class="browser-default custom-select">
               <option selected>Departamento</option>
               <option value="1">Antioquia</option>
               <option value="2">Cundinamarca</option>
@@ -153,10 +187,10 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Municipio-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="municipio" name="municipio" class="browser-default custom-select">
               <option selected>Municipio</option>
               <option value="1">Medellin</option>
               <option value="2">Bogota</option>
@@ -166,24 +200,26 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Direccion de residencia -->
           <div class="md-form">
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="direccionResidencia" mdbInput>
-            <label for="materialRegisterFormFirstName">Dirección de Residencia</label>
-            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
-                la direccion es necesaria
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                minimo 10 caracteres
-            </div>
+            <label for="materialRegisterFormFirstName">
+                <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Direccion es necesaria *
+                </div>
+    
+                <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                    minimo 10 caracteres
+                </div>
+            </label>
+
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Arl -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="arl" name="arl" class="browser-default custom-select">
               <option selected>Arl</option>
               <option value="1">Sura</option>
               <option value="2">Positiva</option>
@@ -191,10 +227,10 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Eps-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="eps" name="eps" class="browser-default custom-select">
               <option selected>Eps</option>
               <option value="1">Nueva Eps</option>
               <option value="2">Sura</option>
@@ -204,10 +240,10 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Caja de Compensación -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="cajaCompensacion" name="cajaCompensacion"class="browser-default custom-select">
               <option selected>Caja de Compensación</option>
               <option value="1">Comfama</option>
               <option value="2">Confenalca</option>
@@ -215,10 +251,10 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Pensiones -->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="pensiones" name="pensiones" class="browser-default custom-select">
               <option selected>Pensiones</option>
               <option value="1">Colpensiones</option>
               <option value="2">Protección</option>
@@ -226,10 +262,10 @@
             </select>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Censantías-->
           <div class="md-form">
-            <select class="browser-default custom-select">
+            <select id="cesantias" name="cesantias" class="browser-default custom-select">
               <option selected>Cesantías</option>
               <option value="1">Protección</option>
               <option value="2">Porvenir</option>
@@ -239,45 +275,47 @@
         </div>
       </div>
       <div class="form-row">
-        <div class="col">
+        <div class="col-md-4">
           <!-- Entidad Empleadora -->
           <div class="md-form">
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="entidadEmpleadora" mdbInput>
-            <label for="materialRegisterFormFirstName">Entidad Empleadora</label>
-            <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.required" class="form-control-feedback " style="color: red;">
-                nombre de la empresa es necesaria
-            </div>
-        
-            <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                minimo 3 caracteres
-            </div>
+            <label for="materialRegisterFormFirstName">
+                <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.required" class="form-control-feedback " style="color: red;">
+                    Nombre de la empresa es necesaria *
+                </div>
+    
+                <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.minlength" class="form-control-feedback " style="color: red;">
+                    minimo 3 caracteres
+                </div>
+            </label>
+
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!-- Cargo -->
           <div class="md-form">
-            <input type="email" id="materialRegisterFormLastName" class="form-control" mdbInput>
-            <label for="materialRegisterFormLastName">Cargo</label>
+            <input type="text" id="cargo" name="cargo" class="form-control" mdbInput>
+            <label for="cargo">Cargo</label>
           </div>
         </div>
-        <div class="col">
+        <div class="col-md-4">
           <!--Fecha de Vinculación-->
           <div class="md-form">
-            <input type="date" id="materialRegisterFormGenero" class="form-control" mdbInput>
-            <label for="materialRegisterFormGenero">Fecha de Vinculación</label>
+            <input type="date" id="fechaDeVinculacion" name="fechaDeVinculacion" class="form-control" mdbInput>
+            <label for="fechaDeVinculacion">Fecha de Vinculación</label>
           </div>
         </div>
       </div>
       <!--Tipo de Contrato-->
       <div class="md-form">
-          <select class="browser-default custom-select">
-              <option selected>Tipo de Contrato</option>
-              <option value="1">Temporal</option>
-              <option value="2">Prestación de Servicios</option>
-              <option value="3">Indefinido</option>
-              <option value="4">Fijo</option>
-              <option value="3">Otro</option>
-            </select>
+        <select id="tipoContrato" name="tipoContrato" class="browser-default custom-select">
+          <option selected>Tipo de Contrato</option>
+          <option value="1">Temporal</option>
+          <option value="2">Prestación de Servicios</option>
+          <option value="3">Indefinido</option>
+          <option value="4">Fijo</option>
+          <option value="3">Otro</option>
+        </select>
       </div>
       <!-- button Enviar-->
       <button mdbBtn color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0"
