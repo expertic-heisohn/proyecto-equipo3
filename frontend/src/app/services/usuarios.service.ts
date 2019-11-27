@@ -14,4 +14,10 @@ export class UsuariosService {
       "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios"
     );
   }
+
+  deleteUsuario(indice: number): Observable<any> {
+    return this.http.delete<any>(
+      `https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/${indice}`
+    );
+  }
 }
