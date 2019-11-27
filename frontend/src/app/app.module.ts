@@ -13,6 +13,7 @@ import { FormEmpleadorComponent } from './components/form-empleador/form-emplead
 
 import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from "@angular/common/http";
+import { UsuariosComponent } from './components/usuarios/usuarios.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { HttpClientModule } from "@angular/common/http";
     FormUsuariosComponent,
     NavbarComponent,
     FormEmpleadorComponent,
+    UsuariosComponent,
     
     
     
