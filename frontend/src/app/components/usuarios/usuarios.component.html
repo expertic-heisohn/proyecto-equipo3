@@ -51,7 +51,12 @@
           <h4 class="modal-title w-100" id="myModalLabel">Nuevo Usuario</h4>
         </div>
         <div class="modal-body">
-          ...
+            <div class="md-form">
+                <mdb-icon fas icon="sticky-note"></mdb-icon>
+            
+                <input type="text" id="nombre" class="form-control" mdbInput [formControl]="nombreInput" />
+                <label for="nombre">Nombre de usuario</label>
+            </div>
         </div>
         <div class="modal-footer">
           <button
@@ -71,6 +76,7 @@
             color="primary"
             class="relative waves-light"
             mdbWavesEffect
+            (click)="createUsuario()"
           >
             Guardar
           </button>
