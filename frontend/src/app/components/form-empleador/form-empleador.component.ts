@@ -13,7 +13,7 @@ export class FormEmpleadorComponent {
     this.formaEmpleador = new FormGroup({
       //valor varible default/validadores/validadores asincronos
       'nombreEmpresa': new FormControl('',[Validators.required, Validators.minLength(3)]),
-      'digitoVerificacion': new FormControl('',[Validators.required, Validators.minLength(3)]),
+      'digitoVerificacion': new FormControl('',[Validators.required]),
       'telefonoEmpresa': new FormControl('',[Validators.required, Validators.min(1000000), Validators.max(9999999)]),
       'correoEmpresa': new FormControl('',[Validators.required,
                                            Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$")]),

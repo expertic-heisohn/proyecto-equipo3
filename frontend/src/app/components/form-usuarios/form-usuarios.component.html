@@ -25,7 +25,7 @@
                   Nombre es necesario *
               </div>
               <div *ngIf="formaUsuario.controls['nombre'].errors?.minlength" class="form-control-feedback" style="color: red;">
-                  por lo menos 3 caracteres en el nombre
+                  por lo menos 3 caracteres
               </div>
             </label>
             
@@ -41,7 +41,7 @@
                     Apellido es necesario *
                 </div>
                 <div *ngIf="formaUsuario.controls['apellido'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                    por lo menos 3 caracteres en apellido
+                    por lo menos 3 caracteres
                 </div>
             </label>
           </div>
@@ -75,7 +75,7 @@
           <div class="md-form">
             <select id="tipodocumento" name="tipodocumento" class="browser-default custom-select" class="form-control" mdbInput>
               <option selected>Tipo de Documento</option>
-              <option value="1">Cedula</option>
+              <option value="1">Cédula</option>
               <option value="2">T.I</option>
               <option value="3">Pasaporte</option>
             </select>
@@ -87,14 +87,14 @@
             <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName="numeroDocumento" mdbInput>
             <label for="materialRegisterFormLastName">
                 <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.required" class="form-control-feedback " style="color: red;">
-                    Numero de documento es necesario *
+                    Número de documento es necesario *
                 </div>
     
                 <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.min" class="form-control-feedback " style="color: red;">
-                    minimo 7 numeros
+                    mínimo 7 números
                 </div>
                 <div *ngIf="formaUsuario.controls['numeroDocumento'].errors?.max" class="form-control-feedback " style="color: red;">
-                    maximo 10 numeros
+                    máximo 10 números
                 </div>
             </label>
 
@@ -137,14 +137,14 @@
             <input type="number" id="materialRegisterFormLastName" class="form-control"formControlName='telefono' mdbInput>
             <label for="materialRegisterFormLastName">
                 <div *ngIf="formaUsuario.controls['telefono'].errors?.required" class="form-control-feedback " style="color: red;">
-                    Telefono fijo es necesario *
+                    Teléfono fijo es necesario *
                 </div>
     
                 <div *ngIf="formaUsuario.controls['telefono'].errors?.min" class="form-control-feedback " style="color: red;">
-                    minimo 7 numeros
+                    mínimo 7 números
                 </div>
                 <div *ngIf="formaUsuario.controls['telefono'].errors?.max" class="form-control-feedback " style="color: red;">
-                    maximo 7 numeros
+                    máximo 7 números
                 </div>
             </label>
 
@@ -154,7 +154,7 @@
         <div class="col-md-4">
           <!--Celular-->
           <div class="md-form">
-            <input type="text" id="celular" name="celular"class="form-control" mdbInput>
+            <input type="number" id="celular" name="celular"class="form-control" mdbInput>
             <label for="celular">Celular</label>
           </div>
         </div>
@@ -192,8 +192,8 @@
           <div class="md-form">
             <select id="municipio" name="municipio" class="browser-default custom-select">
               <option selected>Municipio</option>
-              <option value="1">Medellin</option>
-              <option value="2">Bogota</option>
+              <option value="1">Medellín</option>
+              <option value="2">Bogotá</option>
               <option value="3">Manizales</option>
             </select>
           </div>
@@ -206,11 +206,11 @@
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="direccionResidencia" mdbInput>
             <label for="materialRegisterFormFirstName">
                 <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.required" class="form-control-feedback " style="color: red;">
-                    Direccion es necesaria *
+                    Dirección es necesaria *
                 </div>
     
                 <div *ngIf="formaUsuario.controls['direccionResidencia'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                    minimo 10 caracteres
+                    por lo menos 10 caracteres
                 </div>
             </label>
 
@@ -246,7 +246,7 @@
             <select id="cajaCompensacion" name="cajaCompensacion"class="browser-default custom-select">
               <option selected>Caja de Compensación</option>
               <option value="1">Comfama</option>
-              <option value="2">Confenalca</option>
+              <option value="2">Comfenalco</option>
               <option value="3">Otro</option>
             </select>
           </div>
@@ -281,11 +281,11 @@
             <input type="text" id="materialRegisterFormFirstName" class="form-control"formControlName="entidadEmpleadora" mdbInput>
             <label for="materialRegisterFormFirstName">
                 <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.required" class="form-control-feedback " style="color: red;">
-                    Nombre de la empresa es necesaria *
+                    Nombre de la empresa donde laboras es necesario *
                 </div>
     
                 <div *ngIf="formaUsuario.controls['entidadEmpleadora'].errors?.minlength" class="form-control-feedback " style="color: red;">
-                    minimo 3 caracteres
+                    por lo menos 3 caracteres
                 </div>
             </label>
 
