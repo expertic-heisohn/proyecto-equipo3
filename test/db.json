@@ -27,5 +27,25 @@
       "nombreEmpresa": "rezar",
       "id": 4
     }
+  ],
+  "empleadores": [
+    {
+      "nombreEmpresa": "hgearbhbaer",
+      "digitoVerificacion": 446616,
+      "telefonoEmpleador": 446616,
+      "correoEmpleador": "hahaerhae",
+      "direccionPrincipal": "ahehaehea",
+      "nombreContacto": "haheahaagag",
+      "id": 2
+    },
+    {
+      "nombreEmpresa": "barbharba",
+      "digitoVerificacion": 56464,
+      "telefonoEmpleador": 56464,
+      "correoEmpleador": "arhgrahba",
+      "direccionPrincipal": "haehbar",
+      "nombreContacto": "ahrabarehb",
+      "id": 4
+    }
   ]
 }

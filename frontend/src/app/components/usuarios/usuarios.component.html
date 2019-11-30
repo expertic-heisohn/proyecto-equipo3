@@ -28,7 +28,7 @@
           <td>{{ usuario.direccion}}</td>
           <td>{{ usuario.nombreEmpresa}}</td>
           <td>
-            <mdb-icon fas icon="trash" (click)="deleteUsuario(i)"></mdb-icon>
+            <mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon>
           </td>
         </tr>
       </tbody>
