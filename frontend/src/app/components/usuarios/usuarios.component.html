@@ -18,8 +18,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr mdbTableCol *ngFor="let usuario of usuarios; let i = index">
-          <th scope="row">{{ i }}</th>
+          <!--tr mdbTableCol *ngFor="let usuario of usuarios; let i = index"-->
+        <tr mdbTableCol *ngFor="let usuario of usuarios;">
+          <th scope="row">{{ usuario.id }}</th>
           <td>{{ usuario.nombre }}</td>
           <td>{{ usuario.apellido }}</td>
           <td>{{ usuario.numeroDocumento}}</td>

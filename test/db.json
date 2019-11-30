@@ -1,0 +1,31 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "julian",
+      "apellido": "gomez",
+      "numeroDocumento": 12356,
+      "correo": "juliangranda@hotmail.com",
+      "direccion": "glorieta",
+      "nombreEmpresa": "heinsohn"
+    },
+    {
+      "nombre": "dadadad",
+      "apellido": "adadadada",
+      "numeroDocumento": 1231313132,
+      "correo": "dsadadadadad",
+      "direccion": "adadadadad",
+      "nombreEmpresa": "adadadadadad",
+      "id": 3
+    },
+    {
+      "nombre": "neyder",
+      "apellido": "murillo",
+      "numeroDocumento": 54653435435,
+      "correo": "neydercito",
+      "direccion": "ir a misa",
+      "nombreEmpresa": "rezar",
+      "id": 4
+    }
+  ]
+}

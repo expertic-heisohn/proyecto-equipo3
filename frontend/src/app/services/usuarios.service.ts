@@ -7,17 +7,21 @@ import { Observable } from "rxjs";
 })
 export class UsuariosService {
 
+  //server json
+  url = "http://localhost:3000";
   constructor(private http: HttpClient) { }
 
   getUsuarios(): Observable<IUsuario[]> {
     return this.http.get<IUsuario[]>(
-      "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios"
+      //"https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios"
+      this.url + '/usuarios'
     );
   }
 
   deleteUsuario(indice: number): Observable<any> {
     return this.http.delete<any>(
-      `https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/${indice}`
+      //`https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/${indice}`
+      this.url + `/usuarios/${indice}`
     );
   }
 
@@ -29,8 +33,13 @@ export class UsuariosService {
     };
 
     return this.http.post<IUsuario>(
-      "https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/",
-      usuario,
+      //"https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/",
+      //usuario,
+      //httpOptions
+
+      //servidor json implementado
+      this.url + '/usuarios/',
+      JSON.stringify(usuario),
       httpOptions
     );
   }
