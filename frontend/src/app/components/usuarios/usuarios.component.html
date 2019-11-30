@@ -21,6 +21,11 @@
         <tr mdbTableCol *ngFor="let usuario of usuarios; let i = index">
           <th scope="row">{{ i }}</th>
           <td>{{ usuario.nombre }}</td>
+          <td>{{ usuario.apellido }}</td>
+          <td>{{ usuario.numeroDocumento}}</td>
+          <td>{{ usuario.correo}}</td>
+          <td>{{ usuario.direccion}}</td>
+          <td>{{ usuario.nombreEmpresa}}</td>
           <td>
             <mdb-icon fas icon="trash" (click)="deleteUsuario(i)"></mdb-icon>
           </td>
@@ -52,11 +57,53 @@
         </div>
         <div class="modal-body">
             <div class="md-form">
-                <mdb-icon fas icon="sticky-note"></mdb-icon>
+                <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
             
                 <input type="text" id="nombre" class="form-control" mdbInput [formControl]="nombreInput" />
-                <label for="nombre">Nombre de usuario</label>
+                <label for="nombre">Nombre</label>
             </div>
+
+            <!-- Apellido -->
+            <div class="md-form">
+              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+            
+              <input type="text" id="apellido" class="form-control" mdbInput [formControl]="apellidoInput" />
+              <label for="apellido">Apellido</label>
+            </div>
+            
+            <!-- Numero Documento -->
+            <div class="md-form">
+              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+            
+              <input type="number" id="numeroDocumento" class="form-control" mdbInput [formControl]="numeroDocumentoInput" />
+              <label for="numeroDocumento">numeroDocumento</label>
+            </div>
+
+            <!-- correo -->
+            <div class="md-form">
+              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+            
+              <input type="email" id="correo" class="form-control" mdbInput [formControl]="correoInput" />
+              <label for="correo">correo</label>
+            </div>
+
+            <!-- direccion -->
+            <div class="md-form">
+              <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+            
+              <input type="text" id="direccion" class="form-control" mdbInput [formControl]="direccionInput" />
+              <label for="direccion">direccion</label>
+            </div>
+
+
+            <!-- nombre de la empresa -->
+            <div class="md-form">
+                <!--mdb-icon fas icon="sticky-note"></mdb-icon-->
+              
+                <input type="text" id="nombreEmpresa" class="form-control" mdbInput [formControl]="nombreEmpresaInput" />
+                <label for="nombreEmpresa">NombreEmpresa</label>
+              </div>            
+
         </div>
         <div class="modal-footer">
           <button
@@ -83,5 +130,6 @@
         </div>
       </div>
     </div>
+    
   </div>
 </div>

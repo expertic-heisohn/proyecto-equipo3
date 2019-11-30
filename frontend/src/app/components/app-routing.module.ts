@@ -6,10 +6,13 @@ import { Routes, RouterModule} from '@angular/router';
 
 import { FormUsuariosComponent } from './form-usuarios/form-usuarios.component';
 import { FormEmpleadorComponent } from './form-empleador/form-empleador.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 const routes: Routes = [
-    {path: 'usuario', component:FormUsuariosComponent},
-    {path: 'empleador',component:FormEmpleadorComponent},
+    {path: 'Formulariousuario', component:FormUsuariosComponent},
+    {path: 'Formularioempleador',component:FormEmpleadorComponent},
+    {path: 'usuarios', component:UsuariosComponent}
+    
 
 ];
 
