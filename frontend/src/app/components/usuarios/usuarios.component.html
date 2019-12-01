@@ -11,6 +11,11 @@
     >
       Crear Usuario
     </button>
+    <div>
+    <mdb-icon fas icon="search"></mdb-icon>
+    <input type="text" class="form-control" name="buscarUsuario" placeholder="Buscar..." ([ngModel])="buscarUsuario" />
+     </div>
+
     <table mdbTable>
       <thead>
         <tr>
@@ -19,7 +24,7 @@
       </thead>
       <tbody>
           <!--tr mdbTableCol *ngFor="let usuario of usuarios; let i = index"-->
-        <tr mdbTableCol *ngFor="let usuario of usuarios;">
+        <tr mdbTableCol *ngFor="let usuario of usuarios | filterU:buscarUsuario">
           <th scope="row">{{ usuario.id }}</th>
           <td>{{ usuario.nombre }}</td>
           <td>{{ usuario.apellido }}</td>

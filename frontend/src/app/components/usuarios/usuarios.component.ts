@@ -9,6 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./usuarios.component.sass']
 })
 export class UsuariosComponent implements OnInit {
+  buscarUsuario="";
 
   formaUsuario: FormGroup;
   constructor(private usuariosService: UsuariosService) { 
@@ -61,4 +62,5 @@ export class UsuariosComponent implements OnInit {
       this.getUsuarios();
     });
   }
+
 }
