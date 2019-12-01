@@ -16,6 +16,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
 import { EmpleadoresComponent } from './components/empleadores/empleadores.component';
 import { EditComponent } from './components/edit/edit.component';
+import { EditEmpleadorComponent } from './components/edit-empleador/edit-empleador.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { EditComponent } from './components/edit/edit.component';
     UsuariosComponent,
     EmpleadoresComponent,
     EditComponent,
+    EditEmpleadorComponent,
     
     
     

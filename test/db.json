@@ -2,21 +2,21 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "julian ",
-      "apellido": "gomez granda",
-      "numeroDocumento": 1414241,
+      "nombre": "julian dmyunf",
+      "apellido": "gomez grandanufnftunt",
+      "numeroDocumento": 1414241412141,
       "correo": "juliangranda@hotmail.com",
       "direccion": "glorieta",
       "nombreEmpresa": "heinsohn"
     },
     {
-      "nombre": "neyder",
-      "apellido": "murillo",
-      "numeroDocumento": 54653435435,
-      "correo": "neydercito",
-      "direccion": "ir a misa",
-      "nombreEmpresa": "rezar",
-      "id": 4
+      "nombre": "garga",
+      "apellido": "gargar",
+      "numeroDocumento": 67867,
+      "correo": "uh5ge",
+      "direccion": "geargre",
+      "nombreEmpresa": "gragar",
+      "id": 2
     }
   ],
   "empleadores": [
@@ -37,6 +37,15 @@
       "direccionPrincipal": "haehbar",
       "nombreContacto": "ahrabarehb",
       "id": 4
+    },
+    {
+      "nombreEmpresa": "hehe",
+      "digitoVerificacion": 6757,
+      "telefonoEmpleador": 6757,
+      "correoEmpleador": "hhe",
+      "direccionPrincipal": "hehe",
+      "nombreContacto": "hehet",
+      "id": 5
     }
   ]
 }

@@ -10,14 +10,15 @@ import { FormEmpleadorComponent } from './form-empleador/form-empleador.componen
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { EmpleadoresComponent } from './empleadores/empleadores.component';
 import { EditComponent } from './edit/edit.component';
+import { EditEmpleadorComponent } from './edit-empleador/edit-empleador.component';
 
 const routes: Routes = [
     {path: 'Formulariousuario', component:FormUsuariosComponent},
     {path: 'Formularioempleador',component:FormEmpleadorComponent},
     {path: 'usuarios', component:UsuariosComponent},
     {path: 'empleadores', component:EmpleadoresComponent},
-    {path: 'usuarios-edit/:id',component:EditComponent}
-
+    {path: 'usuarios-edit/:id',component:EditComponent},
+    {path: 'empleadores-edit/:id',component:EditEmpleadorComponent}
 
 ];
 
