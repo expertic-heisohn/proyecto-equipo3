@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "julian ",
-      "apellido": "gomez",
+      "apellido": "gomez granda",
       "numeroDocumento": 1414241,
       "correo": "juliangranda@hotmail.com",
       "direccion": "glorieta",
@@ -17,15 +17,6 @@
       "direccion": "ir a misa",
       "nombreEmpresa": "rezar",
       "id": 4
-    },
-    {
-      "nombre": "Ana",
-      "apellido": "Restrepo",
-      "numeroDocumento": 41256,
-      "correo": "ana@gmail.com",
-      "direccion": "Calle 74",
-      "nombreEmpresa": "Heinsohn",
-      "id": 5
     }
   ],
   "empleadores": [
