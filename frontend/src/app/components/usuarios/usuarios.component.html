@@ -29,6 +29,8 @@
           <td>{{ usuario.nombreEmpresa}}</td>
           <td>
             <mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon>
+            <span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span>
+            <!--span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span-->
           </td>
         </tr>
       </tbody>

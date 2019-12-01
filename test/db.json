@@ -2,21 +2,12 @@
   "usuarios": [
     {
       "id": 1,
-      "nombre": "julian",
-      "apellido": "gomez",
-      "numeroDocumento": 12356,
+      "nombre": "julian ",
+      "apellido": "gomez granda",
+      "numeroDocumento": 1414241,
       "correo": "juliangranda@hotmail.com",
       "direccion": "glorieta",
       "nombreEmpresa": "heinsohn"
-    },
-    {
-      "nombre": "dadadad",
-      "apellido": "adadadada",
-      "numeroDocumento": 1231313132,
-      "correo": "dsadadadadad",
-      "direccion": "adadadadad",
-      "nombreEmpresa": "adadadadadad",
-      "id": 3
     },
     {
       "nombre": "neyder",

@@ -43,4 +43,19 @@ export class UsuariosService {
       httpOptions
     );
   }
+//editar
+  updateUsuario(id, usuario: IUsuario): Observable<IUsuario> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json"
+      })
+    };
+    return this.http.put<IUsuario>(this.url + '/usuarios/'+ id,JSON.stringify(usuario),httpOptions);
+
+  }
+
+  getUsuario(id): Observable<IUsuario>{
+    return this.http.get<IUsuario>(this.url + '/usuarios/'+ id);
+  }
+
 }
