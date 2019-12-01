@@ -17,6 +17,7 @@ export class EmpleadorService {
       //"https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios"
       //this.url + '/empleadores'
       this.url + '/empleador'
+      
     );
   }
 
@@ -26,7 +27,8 @@ export class EmpleadorService {
       //`https://bootcamp-dia-3.camilomontoyau.now.sh/usuarios/${indice}`
       //this.url + `/empleadores/${indice}`
 
-      this.url + `/empleador/${indice}`
+      //this.url + `/empleador/${indice}`
+      this.url + `/empleador?id=${indice}`
     );
   }
 
@@ -45,8 +47,12 @@ export class EmpleadorService {
       //servidor json implementado
       //this.url + '/empleadores/',
 
-      this.url + '/empleador/',
-      JSON.stringify(empleador),
+      //this.url + '/empleador/',
+      //JSON.stringify(empleador),
+      //httpOptions
+
+      this.url + `/empleador`,
+      empleador,
       httpOptions
     );
   }

@@ -34,11 +34,15 @@ public class EmpleadorRestServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		out.print(gson.toJson(listaEmpleados));
 		out.flush();
+		
+		
+
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		/*
 		Empleador empleador = new Empleador();
 		empleador.setNombreEmpresa(request.getParameter("nombreEmpresa"));
 		empleador.setDigitoVerificacion(request.getParameter("digitoVerificacion"));
@@ -46,10 +50,22 @@ public class EmpleadorRestServlet extends HttpServlet {
 		empleador.setCorreoEmpleador(request.getParameter("correoEmpleador"));
 		empleador.setDireccionPrincipal(request.getParameter("direccionPrincipal"));
 		empleador.setNombreContacto(request.getParameter("nombreContacto"));
+		*/
+		BufferedReader bufferedReader = request.getReader();
+		
+		StringBuilder builderPayload = new StringBuilder();
 
+		String line = null;
+		while ((line = bufferedReader.readLine()) != null) {
+			builderPayload.append(line);
+		}
+		
+		Gson gson = new Gson();
+		Empleador empleador = gson.fromJson(builderPayload.toString(), Empleador.class);
 		empleadorEJB.insertar(empleador);
 
-		Gson gson = new Gson();
+		
+		
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
