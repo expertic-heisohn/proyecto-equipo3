@@ -14,6 +14,8 @@ import { FormEmpleadorComponent } from './components/form-empleador/form-emplead
 import { UsuariosService } from './services/usuarios.service';
 import { HttpClientModule } from "@angular/common/http";
 import { UsuariosComponent } from './components/usuarios/usuarios.component';
+import { EmpleadoresComponent } from './components/empleadores/empleadores.component';
+import { EditComponent } from './components/edit/edit.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { UsuariosComponent } from './components/usuarios/usuarios.component';
     NavbarComponent,
     FormEmpleadorComponent,
     UsuariosComponent,
+    EmpleadoresComponent,
+    EditComponent,
     
     
     

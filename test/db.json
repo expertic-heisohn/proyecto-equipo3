@@ -1,0 +1,42 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "julian ",
+      "apellido": "gomez granda",
+      "numeroDocumento": 1414241,
+      "correo": "juliangranda@hotmail.com",
+      "direccion": "glorieta",
+      "nombreEmpresa": "heinsohn"
+    },
+    {
+      "nombre": "neyder",
+      "apellido": "murillo",
+      "numeroDocumento": 54653435435,
+      "correo": "neydercito",
+      "direccion": "ir a misa",
+      "nombreEmpresa": "rezar",
+      "id": 4
+    }
+  ],
+  "empleadores": [
+    {
+      "nombreEmpresa": "hgearbhbaer",
+      "digitoVerificacion": 446616,
+      "telefonoEmpleador": 446616,
+      "correoEmpleador": "hahaerhae",
+      "direccionPrincipal": "ahehaehea",
+      "nombreContacto": "haheahaagag",
+      "id": 2
+    },
+    {
+      "nombreEmpresa": "barbharba",
+      "digitoVerificacion": 56464,
+      "telefonoEmpleador": 56464,
+      "correoEmpleador": "arhgrahba",
+      "direccionPrincipal": "haehbar",
+      "nombreContacto": "ahrabarehb",
+      "id": 4
+    }
+  ]
+}
