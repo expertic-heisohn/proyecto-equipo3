@@ -1,9 +1,15 @@
 package com.heinsohn.api.ejb.dao;
 
-import javax.persistence.EntityManager;
+import org.hibernate.Session;
+
+import com.heinsohn.api.HibernateUtil;
 
 public abstract class DAO {
 	
-	protected EntityManager entityManager;
+	public Session createSession() {
+		return HibernateUtil.getSessionFactory().openSession();
+		
+	}
+	
 
 }
