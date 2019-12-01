@@ -1,4 +1,5 @@
-import{ NgModule} from '@angular/core';
+// tslint:disable-next-line: import-spacing
+import { NgModule} from '@angular/core';
 
 import { Routes, RouterModule} from '@angular/router';
 
@@ -16,7 +17,7 @@ const routes: Routes = [
     {path: 'usuarios', component:UsuariosComponent},
     {path: 'empleadores', component:EmpleadoresComponent},
     {path: 'usuarios-edit/:id',component:EditComponent}
-    
+
 
 ];
 
@@ -25,4 +26,4 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule{}
+export class AppRoutingModule {}
