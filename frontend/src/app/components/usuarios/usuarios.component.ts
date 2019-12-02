@@ -26,6 +26,7 @@ export class UsuariosComponent implements OnInit {
   public correoInput = new FormControl();
   public direccionInput = new FormControl();
   public nombreEmpresaInput = new FormControl();
+  public buscarNombreInput = new FormControl();
   
   
 
@@ -61,4 +62,16 @@ export class UsuariosComponent implements OnInit {
       this.getUsuarios();
     });
   }
+
+  
+  //buscador
+  buscarPorNombre(): void{
+    this.usuariosService.getUsuariosPorNombre(this.buscarNombreInput.value).subscribe(data => {
+      console.log('data' + "buscarPornombreUsuarios");
+      console.log({ data });
+      this.usuarios = data;
+    });
+  }
+
+
 }

@@ -20,6 +20,7 @@ export class EmpleadoresComponent implements OnInit {
   public correoEmpleadorInput = new FormControl();
   public direccionPrincipalInput = new FormControl();
   public nombreContactoInput = new FormControl();
+  public buscarNombreEmpresaInput = new FormControl();
 
   ngOnInit() {
     this.getEmpleadores();
@@ -50,6 +51,15 @@ export class EmpleadoresComponent implements OnInit {
     this.empleadoresService.createEmpleador(nuevoEmpleador).subscribe(data => {
       console.log({ data });
       this.getEmpleadores();
+    });
+  }
+
+  //buscador
+  buscarPorNombreEmpresa(): void{
+    this.empleadoresService.getEmpresasPorNombre(this.buscarNombreEmpresaInput.value).subscribe(data => {
+      console.log('data' + "buscarPornombreEmpresa");
+      console.log({ data });
+      this.empleadores = data;
     });
   }
 

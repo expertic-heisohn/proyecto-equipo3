@@ -12,7 +12,13 @@ export class EditComponent implements OnInit {
   constructor(public usuariosService: UsuariosService, public actRoute: ActivatedRoute, public router:Router) { }
 
   ngOnInit() {
-    this.usuariosService.getUsuario(this.id).subscribe(data => this.usuarioData = data);
+    this.usuariosService.getUsuario(this.id).subscribe(data => {
+      console.log('edit');
+      console.log(data);
+      console.log(this.id);
+      //this.usuarioData = data[0]
+      this.usuarioData = data
+    });
   }
 
   updateUsuario(){

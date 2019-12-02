@@ -69,4 +69,16 @@ public class EmpleadoEJB extends DAO implements OperacionDAO<Empleado>, Empleado
 		return empleado;
 	}
 
+	@Override
+	public List<Empleado> consultarPorNombre(String nombre) {
+		// TODO Auto-generated method stub
+		Session session = createSession();
+		List<Empleado> empleados = session.createQuery("SELECT e FROM Empleado e WHERE e.nombre Like '%"+ nombre +"%' ", Empleado.class).getResultList();
+		// JDCB - usamos SQL
+		// JPA o Hibernate, Podemo usar JPQL - HSQL -> Generan consultas SQL
+		session.close();
+		return empleados;
+		
+	}
+
 }

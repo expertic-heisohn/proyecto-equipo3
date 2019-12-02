@@ -11,6 +11,11 @@
     >
       Crear Usuario
     </button>
+    <div>
+      <input type="text" id="buscar" class="form-control" mdbInput [formControl]="buscarNombreInput" />
+      <button (click) = "buscarPorNombre()">buscar</button>
+    </div>
+    
     <table mdbTable>
       <thead>
         <tr>
@@ -28,8 +33,9 @@
           <td>{{ usuario.direccion}}</td>
           <td>{{ usuario.nombreEmpresa}}</td>
           <td>
-            <mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon>
-            <span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span>
+            <!--mdb-icon fas icon="trash" (click)="deleteUsuario(usuario.id)"></mdb-icon-->
+            <button (click)="deleteUsuario(usuario.id)">Delete</button>
+            <button routerLink = "/usuarios-edit/{{usuario.id}}">Edit</button>
             <!--span routerLink = "/usuarios-edit/{{usuario.id}}">Edit</span-->
           </td>
         </tr>

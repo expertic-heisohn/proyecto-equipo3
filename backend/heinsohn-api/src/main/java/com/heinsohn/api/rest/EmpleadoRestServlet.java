@@ -18,7 +18,7 @@ import com.heinsohn.api.ejb.EmpleadoLocalEJB;
 import com.heinsohn.api.ejb.domain.*;
 
 
-@WebServlet("/api/v1/empleados")
+@WebServlet("/api/v1/usuarios")
 public class EmpleadoRestServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,6 +35,10 @@ public class EmpleadoRestServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		
+		
+		/*
 		List<Empleado> listaEmpleados = empleadoEJB.consultarDatos();
 		Gson gson = new Gson();
 		PrintWriter out = response.getWriter();
@@ -42,12 +46,57 @@ public class EmpleadoRestServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		out.print(gson.toJson(listaEmpleados));
 		out.flush();
+		*/
+		
+        if( req.getParameter("id") != null) {
+            //CONSULTAMOS POR ID DE USUARIO
+        	System.out.println(req.getParameter("id"));
+            consultarPorId(req, response);
+        }else if(req.getParameter("nombre") != null){
+        	System.out.println(req.getParameter("nombre"));
+        	consultarPorNombre(req, response);
+        }else {
+            List<Empleado> listaEmpleados = empleadoEJB.consultarDatos();
+            
+            Gson gson = new Gson();
+            PrintWriter out = response.getWriter();
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            out.print(gson.toJson(listaEmpleados));
+            out.flush();
+        }
+	}
+
+	private void consultarPorNombre(HttpServletRequest req, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		List<Empleado> empleados =  empleadoEJB.consultarPorNombre(req.getParameter("nombre"));
+        
+        Gson gson = new Gson();
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(empleados));
+        out.flush();
+	}
+
+	private void consultarPorId(HttpServletRequest req, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+        
+        Empleado empleado = empleadoEJB.consultarPorId(Long.parseLong(req.getParameter("id")));
+        
+        Gson gson = new Gson();
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(empleado));
+        out.flush();
 	}
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Empleado empleado = new Empleado();
+		
+		/*Empleado empleado = new Empleado();
 		empleado.setNombre(request.getParameter("nombre"));
 		empleado.setApellido(request.getParameter("apellido"));
 		empleado.setNumeroDocumento(request.getParameter("numeroDocumento"));
@@ -56,8 +105,21 @@ public class EmpleadoRestServlet extends HttpServlet {
 		empleado.setNombreEmpresa(request.getParameter("nombreEmpresa"));
 
 		empleadoEJB.insertar(empleado);
+		*/
+		BufferedReader bufferedReader = request.getReader();
+		
+		StringBuilder builderPayload = new StringBuilder();
 
+		String line = null;
+		while ((line = bufferedReader.readLine()) != null) {
+			builderPayload.append(line);
+		}
+		
 		Gson gson = new Gson();
+		
+		Empleado empleado = gson.fromJson(builderPayload.toString(), Empleado.class);
+		empleadoEJB.insertar(empleado);
+		
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		response.setCharacterEncoding("UTF-8");
@@ -80,7 +142,9 @@ public class EmpleadoRestServlet extends HttpServlet {
 		// Convertir el JSON a Objeto
 		Empleado empleado = gson.fromJson(builderPayload.toString(), Empleado.class);
 		System.out.println(empleado);
-
+		
+		empleadoEJB.actualizar(empleado);
+		
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("UTF-8");
@@ -93,5 +157,8 @@ public class EmpleadoRestServlet extends HttpServlet {
 		Long id = Long.parseLong(req.getParameter("id"));
 		empleadoEJB.eliminarPorId(id);
 	}
+	
+	
+
 
 }

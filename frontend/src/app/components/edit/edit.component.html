@@ -4,17 +4,30 @@
       <h3 class="mb-3 text-center">Editar usuario</h3>
   
       <div class= "form-group">
-        <input type="text" [(ngModel)] = "usuarioData.nombre" class = "form-control" placeholder="nombre">
+        Nombre<input type="text" [(ngModel)] = "usuarioData.nombre" class = "form-control" placeholder="nombre">
     </div>
     
     <div class= "form-group">
-        <input type="text" [(ngModel)] = "usuarioData.apellido" class = "form-control" placeholder="apellido">
+        Apellido<input type="text" [(ngModel)] = "usuarioData.apellido" class = "form-control" placeholder="apellido">
     </div>
   
       <div class="form-group">
-        <input type="number" [(ngModel)]="usuarioData.numeroDocumento" class="form-control" placeholder=" numeroDocumento">
+        Numero Documento<input type="number" [(ngModel)]="usuarioData.numeroDocumento" class="form-control" placeholder=" numeroDocumento">
+      </div>
+
+      <div class="form-group">
+        Correo<input type="text" [(ngModel)]="usuarioData.correo" class="form-control" placeholder=" correo">
+      </div>
+
+      <div class="form-group">
+        Direccion<input type="text" [(ngModel)]="usuarioData.direccion" class="form-control" placeholder=" direccion">
       </div>
   
+
+      <div class="form-group">
+        Nombre Empresa<input type="text" [(ngModel)]="usuarioData.nombreEmpresa" class="form-control" placeholder=" nombreEmpresa">
+      </div>
+
       <div class="form-group">
         <button class="btn btn-success btn-lg btn-block" (click)="updateUsuario()">Enviar</button>
         <button class="btn btn-success btn-lg btn-block" (click)="atras()">Cancelar</button>
