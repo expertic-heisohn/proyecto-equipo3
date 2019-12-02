@@ -58,14 +58,25 @@ export class UsuariosService {
         "Content-Type": "application/json"
       })
     };
-    return this.http.put<IUsuario>(this.url + `/usuarios?id=${id}`,
-    JSON.stringify(usuario),
+    //return this.http.put<IUsuario>(this.url + `/usuarios?id=${id}`,
+    //JSON.stringify(usuario),
+    //httpOptions);
+    return this.http.put<IUsuario>(this.url + `/usuarios`,
+    
+    usuario,
     httpOptions);
 
   }
 
   getUsuario(id): Observable<IUsuario>{
     return this.http.get<IUsuario>(this.url + `/usuarios?id=${id}`);
+  }
+
+
+
+  //buscador
+  getUsuariosPorNombre(nombre): Observable<IUsuario[]>{
+    return this.http.get<IUsuario[]>(this.url + `/usuarios?nombre=${nombre}`);
   }
 
 }

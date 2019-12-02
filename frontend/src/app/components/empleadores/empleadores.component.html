@@ -11,6 +11,8 @@
         >
           Crear Empleador
         </button>
+        <input type="text" id="buscarEmpresa" class="form-control" mdbInput [formControl]="buscarNombreEmpresaInput" />
+        <button (click) = "buscarPorNombreEmpresa()">buscar</button>
         <table mdbTable>
           <thead>
             <tr>
@@ -28,7 +30,11 @@
               <td>{{empleador.direccionPrincipal}}</td>
               <td>{{empleador.nombreContacto}}</td>
               <td>
-                <mdb-icon fas icon="trash" (click)="deleteEmpleador(empleador.id)"></mdb-icon>
+                <!--mdb-icon fas icon="trash" (click)="deleteEmpleador(empleador.id)"></mdb-icon-->
+                <button (click)="deleteEmpleador(empleador.id)">Delete</button>
+                <button routerLink = "/empleadores-edit/{{empleador.id}}">Edit</button>
+                
+                
               </td>
             </tr>
           </tbody>

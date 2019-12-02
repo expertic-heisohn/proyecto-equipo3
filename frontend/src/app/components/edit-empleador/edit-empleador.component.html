@@ -1,1 +1,37 @@
-<p>edit-empleador works!</p>
+<div class="container custom-container">
+    <div class="col-md-12">
+      
+      <h3 class="mb-3 text-center">Editar Empleador</h3>
+  
+      <div class= "form-group">
+        Nombre Empresa<input type="text" [(ngModel)] = "empresaData.nombreEmpresa" class = "form-control" placeholder="nombreEmpresa">
+    </div>
+    
+    <div class= "form-group">
+        Digito Verificacion<input type="text" [(ngModel)] = "empresaData.digitoVerificacion" class = "form-control" placeholder="digitoVerificacion">
+    </div>
+  
+      <div class="form-group">
+        Telefono <input type="number" [(ngModel)]="empresaData.telefonoEmpleador" class="form-control" placeholder=" telefonoEmpleador">
+      </div>
+
+      <div class="form-group">
+        Correo<input type="text" [(ngModel)]="empresaData.correoEmpleador" class="form-control" placeholder=" correoEmpleador">
+      </div>
+
+      <div class="form-group">
+        Direccion<input type="text" [(ngModel)]="empresaData.direccionPrincipal" class="form-control" placeholder=" direccionPrincipal">
+      </div>
+  
+
+      <div class="form-group">
+        Nombre Contacto<input type="text" [(ngModel)]="empresaData.nombreContacto" class="form-control" placeholder=" nombreContacto">
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" (click)="updateEmpresa()">Enviar</button>
+        <button class="btn btn-success btn-lg btn-block" (click)="atras()">Cancelar</button>
+      </div>
+      
+    </div>
+  </div>

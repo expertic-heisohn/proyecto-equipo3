@@ -19,7 +19,7 @@ const routes: Routes = [
     {path: 'empleadores', component:EmpleadoresComponent},
     {path: 'usuarios-edit/:id',component:EditComponent},
     {path: 'empleadores-edit/:id',component:EditEmpleadorComponent}
-
+    
 ];
 
 @NgModule({

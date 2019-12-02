@@ -26,6 +26,7 @@ public class EmpleadorRestServlet extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse response) throws ServletException, IOException {
+		/*
 		List<Empleador> listaEmpleados = empleadorEJB.consultarDatos();
 
 		Gson gson = new Gson();
@@ -34,9 +35,51 @@ public class EmpleadorRestServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		out.print(gson.toJson(listaEmpleados));
 		out.flush();
+		*/
 		
+        if( req.getParameter("id") != null) {
+            //CONSULTAMOS POR ID DE USUARIO
+        	System.out.println(req.getParameter("id"));
+            consultarPorId(req, response);
+        }else if(req.getParameter("nombreEmpresa") != null){
+        	System.out.println(req.getParameter("nombreEmpresa"));
+        	consultarPorNombre(req, response);
+        }else {
+            List<Empleador> listaEmpleadores = empleadorEJB.consultarDatos();
+            
+            Gson gson = new Gson();
+            PrintWriter out = response.getWriter();
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            out.print(gson.toJson(listaEmpleadores));
+            out.flush();
+        }
 		
 
+	}
+
+	private void consultarPorNombre(HttpServletRequest req, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+		List<Empleador> empleadores =  empleadorEJB.consultarPorNombre(req.getParameter("nombreEmpresa"));
+        
+        Gson gson = new Gson();
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(empleadores));
+        out.flush();
+	}
+
+	private void consultarPorId(HttpServletRequest req, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+        Empleador empleador = empleadorEJB.consultarPorId(Long.parseLong(req.getParameter("id")));
+        
+        Gson gson = new Gson();
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(empleador));
+        out.flush();
 	}
 
 	@Override
@@ -89,6 +132,8 @@ public class EmpleadorRestServlet extends HttpServlet {
 		Empleador empleador = gson.fromJson(builderPayload.toString(), Empleador.class);
 		System.out.println(empleador);
 
+		empleadorEJB.actualizar(empleador);
+		
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("application/json");
 		resp.setCharacterEncoding("UTF-8");

@@ -16,8 +16,8 @@ export class EditComponent implements OnInit {
       console.log('edit');
       console.log(data);
       console.log(this.id);
-      //this.usuarioData = data.nombre
-      this.usuarioData = data[0]
+      //this.usuarioData = data[0]
+      this.usuarioData = data
     });
   }
 

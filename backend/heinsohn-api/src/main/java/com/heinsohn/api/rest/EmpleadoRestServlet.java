@@ -38,7 +38,7 @@ public class EmpleadoRestServlet extends HttpServlet {
 		
 		
 		
-		
+		/*
 		List<Empleado> listaEmpleados = empleadoEJB.consultarDatos();
 		Gson gson = new Gson();
 		PrintWriter out = response.getWriter();
@@ -46,11 +46,15 @@ public class EmpleadoRestServlet extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		out.print(gson.toJson(listaEmpleados));
 		out.flush();
+		*/
 		
-		/*
         if( req.getParameter("id") != null) {
             //CONSULTAMOS POR ID DE USUARIO
+        	System.out.println(req.getParameter("id"));
             consultarPorId(req, response);
+        }else if(req.getParameter("nombre") != null){
+        	System.out.println(req.getParameter("nombre"));
+        	consultarPorNombre(req, response);
         }else {
             List<Empleado> listaEmpleados = empleadoEJB.consultarDatos();
             
@@ -60,19 +64,31 @@ public class EmpleadoRestServlet extends HttpServlet {
             response.setCharacterEncoding("UTF-8");
             out.print(gson.toJson(listaEmpleados));
             out.flush();
-        }*/
+        }
 	}
 
-	private void consultarPorId(HttpServletRequest req, HttpServletResponse response) throws IOException {
+	private void consultarPorNombre(HttpServletRequest req, HttpServletResponse response) throws IOException {
 		// TODO Auto-generated method stub
-        
-        empleadoEJB.consultarPorId(Long.parseLong(req.getParameter("id")));
+		List<Empleado> empleados =  empleadoEJB.consultarPorNombre(req.getParameter("nombre"));
         
         Gson gson = new Gson();
         PrintWriter out = response.getWriter();
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        //out.print(gson.toJson());
+        out.print(gson.toJson(empleados));
+        out.flush();
+	}
+
+	private void consultarPorId(HttpServletRequest req, HttpServletResponse response) throws IOException {
+		// TODO Auto-generated method stub
+        
+        Empleado empleado = empleadoEJB.consultarPorId(Long.parseLong(req.getParameter("id")));
+        
+        Gson gson = new Gson();
+        PrintWriter out = response.getWriter();
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        out.print(gson.toJson(empleado));
         out.flush();
 	}
 

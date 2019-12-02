@@ -57,19 +57,31 @@ export class EmpleadorService {
     );
   }
 
+
+
   //editar
-  updateUsuario(id, empleador: IEmpleador): Observable<IEmpleador> {
+  updateEmpresa(id, empleador: IEmpleador): Observable<IEmpleador> {
     const httpOptions = {
       headers: new HttpHeaders({
         "Content-Type": "application/json"
       })
     };
-    //return this.http.put<IEmpleador>(this.url + '/empleadores/'+ id,JSON.stringify(empleador),httpOptions);
-    return this.http.put<IEmpleador>(this.url + '/empleador/'+ id,JSON.stringify(empleador),httpOptions);
+    //return this.http.put<IUsuario>(this.url + `/usuarios?id=${id}`,
+    //JSON.stringify(usuario),
+    //httpOptions);
+    return this.http.put<IEmpleador>(this.url + `/empleador`,
+    
+    empleador,
+    httpOptions);
+
   }
 
-  getUsuario(id): Observable<IEmpleador>{
-    //return this.http.get<IEmpleador>(this.url + '/empleadores/'+ id);
-    return this.http.get<IEmpleador>(this.url + '/empleador/'+ id);
+  getEmpresa(id): Observable<IEmpleador>{
+    return this.http.get<IEmpleador>(this.url + `/empleador?id=${id}`);
+  }
+
+  //buscador
+  getEmpresasPorNombre(nombre): Observable<IEmpleador[]>{
+    return this.http.get<IEmpleador[]>(this.url + `/empleador?nombreEmpresa=${nombre}`);
   }
 }

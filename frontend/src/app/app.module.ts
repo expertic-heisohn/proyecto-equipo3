@@ -19,6 +19,7 @@ import { EditComponent } from './components/edit/edit.component';
 import { EditEmpleadorComponent } from './components/edit-empleador/edit-empleador.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,

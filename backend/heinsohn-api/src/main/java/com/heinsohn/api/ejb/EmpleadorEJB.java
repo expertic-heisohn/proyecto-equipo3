@@ -9,6 +9,7 @@ import org.hibernate.Session;
 
 import com.heinsohn.api.ejb.dao.DAO;
 import com.heinsohn.api.ejb.dao.OperacionDAO;
+import com.heinsohn.api.ejb.domain.Empleado;
 import com.heinsohn.api.ejb.domain.Empleador;
 
 
@@ -64,6 +65,21 @@ public class EmpleadorEJB extends DAO implements EmpleadorLocalEJB{
 		session.getTransaction().commit();
 		session.close();
 		return empleador;
+	}
+
+	
+	@Override
+	public List<Empleador> consultarPorNombre(String nombreEmpresa) {
+		// TODO Auto-generated method stub
+		Session session = createSession();
+		List<Empleador> empleadores = session.createQuery("SELECT e FROM Empleador e WHERE e.nombreEmpresa Like '%"+ nombreEmpresa +"%' ", Empleador.class).getResultList();
+		// JDCB - usamos SQL
+		// JPA o Hibernate, Podemo usar JPQL - HSQL -> Generan consultas SQL
+		session.close();
+		return empleadores;
+		
+		
+
 	}
 
 	
